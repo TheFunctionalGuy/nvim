@@ -4,9 +4,11 @@ local cmp = require('cmp')
 lsp.preset('recommended')
 lsp.ensure_installed({
     'rust_analyzer',
+    'clangd',
 })
 
 lsp.set_preferences({
+    suggest_lsp_servers = false,
     sign_icons = {
         error = 'E',
         warn  = 'W',

@@ -103,4 +103,19 @@ return require('packer').startup(function(use)
 
     -- vim-be-good
     use 'ThePrimeagen/vim-be-good'
+
+    -- neoclip
+    use {
+        'AckslD/nvim-neoclip.lua',
+        requires = {
+            {'kkharji/sqlite.lua', module = 'sqlite'},
+            {'nvim-telescope/telescope.nvim'},
+        },
+        config = function()
+            require('neoclip').setup({
+                enable_persistent_history = true,
+                continuous_sync = true,
+            })
+        end,
+    }
 end)
